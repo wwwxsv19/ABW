@@ -28,7 +28,8 @@ void setup() {
   lcd.init();
   setLcd(); 
   lcd.print("Hi Auto-Nut!");
-  
+  delay(3000);
+
   Serial.begin(9600);
 }
 
