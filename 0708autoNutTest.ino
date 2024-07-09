@@ -34,7 +34,8 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("State : " + digitalRead(wlsnsr));
+  Serial.print("State : ");
+  Serial.println(digitalRead(wlsnsr), HEX); // Serial 통신으로 현재 무접점 수위 센서의 상태 파악
 
   if(digitalRead(wlsnsr)) {
 
@@ -42,13 +43,14 @@ void loop() {
     warn();
   
   }
-   else {
+  else {
   
     digitalWrite(snide, LOW);
     safe();
   
   }
 
+  delay(500); // lcd 출력 용이 & 규칙적인 상태 검사를 위해 0.5초 딜레이
 }
 
 void setLcd() {
